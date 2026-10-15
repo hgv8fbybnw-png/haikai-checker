@@ -2527,7 +2527,7 @@ table.io-lines td small{display:block;font-size:12px;color:var(--muted);line-hei
   function renderHistory(){
     var items = H.history.items(), where = H.history.where(), esc = H.esc, now = new Date(), list = $('hist-list');
     $('hist-where').textContent = where==='account' ? 'あなたのアカウントに保存しています。ほかの人には見えません。スマホとパソコンで同じ履歴が見られます。'
-      : where==='pending' ? '' : 'この端末のこのブラウザにだけ保存しています。';
+      : where==='pending' ? '' : 'この端末の、この開き方の中にだけ保存しています（ホーム画面のアイコン・Safari・LINEはそれぞれ別）。アイコンを消すと履歴も消えます。';
     // totals
     var ym = now.getFullYear()*12 + now.getMonth(), m = {coins:0, yen:0, n:0, done:0}, all = {coins:0, yen:0, n:items.length, done:0};
     items.forEach(function(it){
@@ -2636,7 +2636,7 @@ table.io-lines td small{display:block;font-size:12px;color:var(--muted);line-hei
 <script>
 (function(){
   'use strict';
-  var BUILD = 'b5c109ff7d55', CACHE = 'haikai-app-v1', lastCheck = 0;
+  var BUILD = '7262e3d3ad13', CACHE = 'haikai-app-v1', lastCheck = 0;
   if (!('serviceWorker' in navigator)) return;
   var bar = document.getElementById('app-update');
   document.body.insertBefore(bar, document.body.firstChild);   // above the page, so it never covers the machine select or tabs
@@ -2665,6 +2665,7 @@ table.io-lines td small{display:block;font-size:12px;color:var(--muted);line-hei
   });
   // a home-screen app comes back from the background without reloading: look again then
   document.addEventListener('visibilitychange', function(){ if (document.visibilityState === 'visible') check(); });
+  window.addEventListener('pageshow', function(e){ if (e.persisted) check(); });
 })();
 </script>
 </body></html>
