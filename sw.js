@@ -1,4 +1,4 @@
-/* 徘徊チェッカー（アプリ版）の控え ― 2026-10-15
+/* 鬣犬（旧名 徘徊チェッカー）アプリ版の控え ― 2026-10-15
  *
  * 開くとき：スマホの中の控えをすぐ出す（速い・電波がなくても開ける）。
  *           同時に裏で新しい版を取りにいき、控えを入れかえる（次に開いたときは新しい版）。
@@ -9,7 +9,7 @@
  *   消すのは自分の箱（haikai- で始まる名前）だけ。
  * ★ 「更新する」はページから cache:'reload' で取りにくる。ここで控えを返すと古い版をまた入れてしまうので、ネットに通す。
  */
-var BUILD = 'a516a76b1644';
+var BUILD = 'af5df4ddf54f';
 var CACHE = 'haikai-app-v1';
 var PAGE = new URL('./', self.registration.scope).href;
 var STATIC = ['manifest.webmanifest', 'icon-180.png', 'icon-192.png', 'icon-512.png'];
