@@ -9,7 +9,7 @@
  *   消すのは自分の箱（haikai- で始まる名前）だけ。
  * ★ 「更新する」はページから cache:'reload' で取りにくる。ここで控えを返すと古い版をまた入れてしまうので、ネットに通す。
  */
-var BUILD = '7262e3d3ad13';
+var BUILD = 'a516a76b1644';
 var CACHE = 'haikai-app-v1';
 var PAGE = new URL('./', self.registration.scope).href;
 var STATIC = ['manifest.webmanifest', 'icon-180.png', 'icon-192.png', 'icon-512.png'];
